@@ -13,10 +13,9 @@ Route::get('/about', function () {
 });
 
 Route::get('/jobs', function () {
-    return view('jobs', [
-        'greeting' => 'Hello!',
-        'jobs' => Job::all()
-    ]);
+    $jobs = Job::all();
+
+    return view('jobs', $jobs);
 });
 
 Route::get('/jobs/{id}', function ($id) {
